@@ -1,6 +1,7 @@
 package com.example.activitytest
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -10,22 +11,27 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.Toast
+import com.example.activitytest.BaseActivity.Companion.actionStart
 import com.example.activitytest.databinding.FirstLayoutBinding
 
-class FirstActivity : AppCompatActivity() {
+class FirstActivity : BaseActivity() {
 
     private lateinit var binding: FirstLayoutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        Log.d("FirstActivity", "Task id is $taskId")
         binding = FirstLayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        binding.button1.setOnClickListener{
-//            Toast.makeText(this, "You clicked Button1", Toast.LENGTH_LONG).show()
-//        }
-
         binding.button1.setOnClickListener {
+//            val intent = Intent(this, SecondActivity::class.java)
+//            startActivity(intent)
+            Util.doAction2()
+            doSomething()
+            SecondActivity.actionStart(this, "data1", "data2")
+        }
+
+//        binding.button1.setOnClickListener {
 //            隐式调用加载activity
 //            val intent = Intent("com.example.activitytest.ACTION_START")
 //            intent.addCategory("com.example.activitytest.MY_CATEGORY")
@@ -42,10 +48,16 @@ class FirstActivity : AppCompatActivity() {
 //            intent.putExtra("extra_data",data)
 //            startActivity(intent)
 
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivityForResult(intent, 1)
+            //回退传参
+//            val intent = Intent(this, SecondActivity::class.java)
+//            startActivityForResult(intent, 1)
 
-        }
+//        }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("FirstActivity", "onRestart")
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
