@@ -17,42 +17,44 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
+
 //        binding.button.setOnClickListener {
 //
 //            val inputText = binding.editText.text.toString()
 //            Log.d("123",inputText)
 //            Toast.makeText(this, inputText, Toast.LENGTH_SHORT).show()
 //        }
-        binding.button.setOnClickListener(this)
+//        binding.button.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
-            R.id.button -> {
-//                val inputText = binding.editText.text.toString()
-//                Log.d("123",inputText)
-//                Toast.makeText(this, inputText, Toast.LENGTH_SHORT).show()
-
-//                binding.imageView.setImageResource(R.drawable.img_2)
-//                if (binding.progressBar.visibility == View.VISIBLE) {
-//                    binding.progressBar.visibility = View.GONE
-//                } else {
-//                    binding.progressBar.visibility = View.VISIBLE
+//            R.id.button -> {
+////                val inputText = binding.editText.text.toString()
+////                Log.d("123",inputText)
+////                Toast.makeText(this, inputText, Toast.LENGTH_SHORT).show()
+//
+////                binding.imageView.setImageResource(R.drawable.img_2)
+////                if (binding.progressBar.visibility == View.VISIBLE) {
+////                    binding.progressBar.visibility = View.GONE
+////                } else {
+////                    binding.progressBar.visibility = View.VISIBLE
+////                }
+//
+//                AlertDialog.Builder(this).apply {
+//                    setTitle("This is Dialog")
+//                    setMessage("Something important.")
+//                    setCancelable(false)
+//                    setPositiveButton("OK") { dialog, which ->
+//                    }
+//                    setNegativeButton("Cancel") { dialog, which ->
+//                    }
+//                    show()
 //                }
-
-                AlertDialog.Builder(this).apply {
-                    setTitle("This is Dialog")
-                    setMessage("Something important.")
-                    setCancelable(false)
-                    setPositiveButton("OK") { dialog, which ->
-                    }
-                    setNegativeButton("Cancel") { dialog, which ->
-                    }
-                    show()
-                }
-
-
-            }
+//
+//
+//            }
         }
     }
 }
