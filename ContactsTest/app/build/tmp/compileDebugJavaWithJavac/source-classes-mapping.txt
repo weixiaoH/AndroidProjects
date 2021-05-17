@@ -1,0 +1,4 @@
+com/example/contactstest/BuildConfig.java
+ com.example.contactstest.BuildConfig
+com/example/contactstest/databinding/ActivityMainBinding.java
+ com.example.contactstest.databinding.ActivityMainBinding

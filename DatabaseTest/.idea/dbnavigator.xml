@@ -2,7 +2,11 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
+<<<<<<< HEAD
     <value-preview-text-wrapping value="false" />
+=======
+    <value-preview-text-wrapping value="true" />
+>>>>>>> bc647a5 (DatabaseTest)
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -17,7 +21,11 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
+<<<<<<< HEAD
       <charset value="UTF-8" />
+=======
+      <charset value="GBK" />
+>>>>>>> bc647a5 (DatabaseTest)
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -25,15 +33,20 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
+<<<<<<< HEAD
       <connection connection-id="a0113f5b-a097-4072-bc65-2b53a9fd9975">
         <schema name="main" object-types="table, view, constraint, index, column, dataset trigger" />
       </connection>
       <connection connection-id="4fa66759-77a7-477c-8358-b1e030f6f113">
+=======
+      <connection connection-id="b838892c-ca82-4cc7-8c43-1967e8ac0673">
+>>>>>>> bc647a5 (DatabaseTest)
         <schema name="main" object-types="table, view, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
+<<<<<<< HEAD
     <connection id="a0113f5b-a097-4072-bc65-2b53a9fd9975">
       <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
@@ -53,6 +66,22 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="a0113f5b-a097-4072-bc65-2b53a9fd9975" dataset="main.Book" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="4fa66759-77a7-477c-8358-b1e030f6f113" dataset="main.Book" active-filter-id="EMPTY_FILTER" />
+=======
+    <connection id="b838892c-ca82-4cc7-8c43-1967e8ac0673">
+      <console name="Connection" type="STANDARD" schema="main" session="Main" />
+    </connection>
+  </component>
+  <component name="DBNavigator.Project.DatabaseFileManager">
+    <open-files>
+      <object connection-id="b838892c-ca82-4cc7-8c43-1967e8ac0673" object-ref="schemas/main/tables/Book" />
+    </open-files>
+  </component>
+  <component name="DBNavigator.Project.DatabaseSessionManager">
+    <connection id="b838892c-ca82-4cc7-8c43-1967e8ac0673" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="b838892c-ca82-4cc7-8c43-1967e8ac0673" dataset="main.Book" active-filter-id="EMPTY_FILTER" />
+>>>>>>> bc647a5 (DatabaseTest)
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -80,7 +109,11 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
+<<<<<<< HEAD
       <connection id="a0113f5b-a097-4072-bc65-2b53a9fd9975" active="true">
+=======
+      <connection id="b838892c-ca82-4cc7-8c43-1967e8ac0673" active="true">
+>>>>>>> bc647a5 (DatabaseTest)
         <database>
           <name value="Connection" />
           <description value="" />
@@ -95,6 +128,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
+<<<<<<< HEAD
             <file path="$PROJECT_DIR$/../../../AndroidStudio/DeviceExplorer/Pixel_API_30 [emulator-5554]/data/data/com.example.databasetest/databases/BookStore.db" schema="main" />
           </files>
           <type value="NONE" />
@@ -183,6 +217,9 @@
           <database value="database" />
           <files>
             <file path="$PROJECT_DIR$/../../../AndroidStudio/DeviceExplorer/Pixel_API_30 [emulator-5554]/data/data/com.example.databasetest/databases/BookStore.db" schema="main" />
+=======
+            <file path="E:\workspace\AndroidProjects\BookStore.db" schema="main" />
+>>>>>>> bc647a5 (DatabaseTest)
           </files>
           <type value="NONE" />
           <user value="" />

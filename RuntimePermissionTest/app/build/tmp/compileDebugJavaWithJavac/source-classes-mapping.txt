@@ -1,0 +1,4 @@
+com/example/runtimepermissiontest/BuildConfig.java
+ com.example.runtimepermissiontest.BuildConfig
+com/example/runtimepermissiontest/databinding/ActivityMainBinding.java
+ com.example.runtimepermissiontest.databinding.ActivityMainBinding

@@ -1,0 +1,4 @@
+#Sun May 16 19:05:54 CST 2021
+base.0=E\:\\workspace\\AndroidProjects\\ContactsTest\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
