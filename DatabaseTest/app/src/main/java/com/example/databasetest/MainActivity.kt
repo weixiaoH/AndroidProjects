@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
 =======
 import android.util.Log
 import com.example.databasetest.databinding.ActivityMainBinding
+import com.example.providertest.later
 
 class MainActivity : AppCompatActivity() {
 >>>>>>> bc647a5 (DatabaseTest)
@@ -20,8 +21,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val dbHelper = MyDatabaseHelper(this, "BookStore.db", 2)
+        val p by later {
+            Log.d("TAG", "run codes inside later block")
+            "test later"
+        }
         binding.createDatabase.setOnClickListener {
             dbHelper.writableDatabase
+            p.toString()
         }
         binding.addData.setOnClickListener {
             val db = dbHelper.writableDatabase
