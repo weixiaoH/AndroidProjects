@@ -8,7 +8,12 @@ import android.util.Log
 import androidx.core.content.edit
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.work.BackoffPolicy
+import androidx.work.OneTimeWorkRequest
+import androidx.work.WorkInfo
+import androidx.work.WorkManager
 import com.example.jetpacktest.databinding.ActivityMainBinding
+import java.util.concurrent.TimeUnit
 import kotlin.concurrent.thread
 
 class MainActivity : AppCompatActivity() {
@@ -71,6 +76,29 @@ class MainActivity : AppCompatActivity() {
                     Log.d("MainActivity", user.toString())
                 }
             }
+        }
+
+        binding.doWorkBtn.setOnClickListener {
+            val request = OneTimeWorkRequest.Builder(SimpleWorker::class.java)
+                .setInitialDelay(5, TimeUnit.MINUTES)
+                .addTag("simple")
+                .setBackoffCriteria(BackoffPolicy.LINEAR, 10, TimeUnit.SECONDS)
+                .build()
+            WorkManager.getInstance(this).enqueue(request)
+
+            WorkManager.getInstance(this).cancelAllWorkByTag("simple")
+            WorkManager.getInstance(this).cancelWorkById(request.id)
+            WorkManager.getInstance(this).cancelAllWork()
+
+            WorkManager.getInstance(this)
+                .getWorkInfoByIdLiveData(request.id)
+                .observe(this) { workInfo ->
+                    if (workInfo.state == WorkInfo.State.SUCCEEDED) {
+                        Log.d("MainActivity", "do work succeeded")
+                    } else if (workInfo.state == WorkInfo.State.FAILED) {
+                        Log.d("MainActivity", "do work failed")
+                    }
+                }
         }
     }
 
