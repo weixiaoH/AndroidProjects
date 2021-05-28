@@ -31,12 +31,29 @@ class MainActivity : AppCompatActivity() {
         val countReserved = sp.getInt("count_reserved", 0)
         viewModel = ViewModelProvider(this, MainViewModelFactory(countReserved))
                 .get(MainViewModel::class.java)
-        binding.plusOneBtn.setOnClickListener {
-            viewModel.plusOne()
+
+        binding.getUserBtn.setOnClickListener {
+            val userId = (0..10000).random().toString()
+            viewModel.getUser(userId)
         }
+
+        viewModel.user.observe(this, Observer { user ->
+            binding.infoText.text = user.firstName
+        })
+
+        binding.plusOneBtn.setOnClickListener {
+<<<<<<< HEAD
+            viewModel.plusOne()
+=======
+            viewModel.counter ++
+            refreshCounter()
+>>>>>>> 48b5ec9 (stash)
+        }
+
         binding.clearBtn.setOnClickListener {
             viewModel.clear()
         }
+<<<<<<< HEAD
         viewModel.counter.observe(this, Observer { count ->
             binding.infoText.text = count.toString()
         })
@@ -100,6 +117,23 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
         }
+=======
+
+        refreshCounter()
+
+        binding.plusOneBtn.setOnClickListener {
+            viewModel.plusOne()
+        }
+
+        binding.clearBtn.setOnClickListener {
+            viewModel.clear()
+        }
+
+        viewModel.counter.observe(this, Observer { count ->
+            binding.infoText.text = count.toString()
+        })
+
+>>>>>>> 48b5ec9 (stash)
     }
 
     override fun onPause() {
@@ -108,6 +142,7 @@ class MainActivity : AppCompatActivity() {
             putInt("count_reserved", viewModel.counter.value ?: 0)
         }
     }
+
 
     private fun refreshCounter() {
         binding.infoText.text = viewModel.counter.toString()
